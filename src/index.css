@@ -12,7 +12,33 @@ code {
     monospace;
 }
 
+.container {
+  margin: 25px auto;
+}
+
 .list-btn a {
   color: #fff;
   text-decoration: none;
+}
+
+.inner-sec {
+  padding: 15px;
+  background-color: rgb(177 177 177 / 40%);
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: 700;
+}
+
+.form-group input {
+  border-radius: 7px;
+}
+
+thead {
+  background-color: #212529;
+  color: #fff;
 }
