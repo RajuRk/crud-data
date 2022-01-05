@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Allusers from "./components/Allusers";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Adduser from "./components/Adduser";
+import EditUser from "./components/EditUser";
 import { Link } from "react-router-dom";
 
 export const userContext = React.createContext();
@@ -11,17 +12,17 @@ export const userContext = React.createContext();
 function App() {
   let [data, setData] = useState([
     {
-      name: "Rajkumar",
+      name: "Jhon",
       age: "26",
       gender: "Male",
-      email: "rajurk044@gmail.com",
-      mobile: "9788351283",
+      email: "jhon@gmail.com",
+      mobile: "9999988888",
     },
     {
-      name: "Dhana",
-      age: "27",
-      gender: "Male",
-      email: "dhana@gmail.com",
+      name: "Rose",
+      age: "24",
+      gender: "Female",
+      email: "rose@gmail.com",
       mobile: "9865986956",
     },
   ]);
@@ -44,6 +45,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Allusers />} />
             <Route path="/adduser" element={<Adduser />} />
+            <Route path="/edituser/:id" element={<EditUser />} />
           </Routes>
         </userContext.Provider>
       </Router>
