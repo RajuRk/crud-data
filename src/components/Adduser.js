@@ -24,7 +24,8 @@ function Adduser() {
   };
   console.log(context);
   return (
-    <div>
+    <div className="inner-sec">
+      <h2 className="m-2">Add User</h2>
       <form>
         <div class="form-group">
           <label>Name</label>
