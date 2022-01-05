@@ -1,11 +1,19 @@
 import React, { useContext } from "react";
 import { userContext } from "../App";
+import { useNavigate } from "react-router-dom";
 
 function Allusers() {
   let context = useContext(userContext);
+  let navigate = useNavigate();
+
+  let handleDelete = (e) => {
+    context.data.splice(context.data.indexOf(e), 1);
+    context.setData([...context.data]);
+  };
 
   return (
     <div>
+      <h2 className="m-2">User List</h2>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -29,8 +37,21 @@ function Allusers() {
                 <td>{e.email}</td>
                 <td>{e.mobile}</td>
                 <td>
-                  <button className="btn btn-primary">Edit</button>&nbsp;
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                      navigate("/edituser/" + i);
+                    }}
+                  >
+                    Edit
+                  </button>
+                  &nbsp;
+                  <button
+                    className="btn btn-danger"
+                    onClick={(e) => handleDelete(e)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
